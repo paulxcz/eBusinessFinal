@@ -35,6 +35,7 @@
 						<th scope="col" class="text-center">Fecha culminación estimada</th>
 						<th scope="col" class="text-center">Especificaciones</th>
 						<th scope="col" class="text-center">Fecha Contrato</th>
+						<th scope="col" class="text-center">Proyecto</th>
 						<th scope="col" class="text-center">Emprendedor</th>
 						<th scope="col" class="text-center">Mercadologo</th>
 					</tr>
@@ -45,7 +46,8 @@
 						<td class="text-center" th:text="${co.fechaCulminacionEstimada}"></td>
 						<td class="text-center" th:text="${co.especificaciones}"></td>
 						<td class="text-center" th:text="${co.dateContrato}"></td>
-						<td class="text-center" th:text="${co.emprendedor.nombreEmprendedor}"></td>
+						<td class="text-center" th:text="${co.proyecto.nombre}"></td>
+						<td class="text-center" th:text="${co.proyecto.emprendedor.nombreEmprendedor}"></td>
 						<td class="text-center" th:text="${co.mercadologo.nombreMercadologo}"></td>
 					</tr>
 				</tbody>

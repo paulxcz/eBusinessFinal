@@ -60,11 +60,11 @@
 								th:if="${#fields.hasErrors('dateContrato')}"
 								th:errors="*{dateContrato}"></div>
 
-							<label for="emprendedor">EMPRENDEDOR:</label> <select
-								class="form-control" th:field="*{emprendedor.idEmprendedor}">
-								<option th:each="e: ${listaEmprendedores}"
-									th:value="${e.idEmprendedor}" th:text="${e.nombreEmprendedor}"
-									th:selected="(${e.idEmprendedor} == *{emprendedor.idEmprendedor})"></option>
+							<label for="proyecto">PROYECTO:</label> <select
+								class="form-control" th:field="*{proyecto.idProyecto}">
+								<option th:each="p: ${listaProyectos}"
+									th:value="${p.idProyecto}" th:text="${p.nombre}"
+									th:selected="(${p.idProyecto} == *{proyecto.idProyecto})"></option>
 							</select>
 							
 							<label for="mercadologo">MERCADOLOGO:</label> <select

@@ -10,7 +10,7 @@
 <meta name="description" content="">
 <meta name="author" content="">
 
-<title>2021-02</title>
+<title>e-Business - Asignar Roles</title>
 
 <!-- Custom fonts for this template-->
 <link href="/vendor/fontawesome-free/css/all.min.css" rel="stylesheet"
@@ -32,17 +32,17 @@
 
 			<!-- Sidebar -->
 		<ul
-			class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion"
+			class="navbar-nav bg-info sidebar sidebar-dark accordion"
 			id="accordionSidebar">
 
 			<!-- Sidebar - Brand -->
 			<a
 				class="sidebar-brand d-flex align-items-center justify-content-center"
-				th:href="@{/categories/index}">
+				th:href="@{/contratos/list}">
 				<div class="sidebar-brand-icon rotate-n-15">
-					<i class="fas fa-leaf"></i>
+					<i class=""></i>
 				</div>
-				<div class="sidebar-brand-text mx-3">App</div>
+				<div class="sidebar-brand-text mx-3">e-Business</div>
 			</a>
 
 			<!-- Divider -->
@@ -77,6 +77,19 @@
 						<a class="collapse-item" th:href="@{/roles/new}">Roles</a>
 					</div>
 				</div>
+				
+				
+				<div id="collapseTwo" class="collapse" aria-labelledby="headingTwo"
+					data-parent="#accordionSidebar">
+					<div class="bg-white py-2 collapse-inner rounded">
+						<a class="collapse-item" th:href="@{/roles/list}">Lista de
+							Roles</a>
+					</div>
+					</div>
+				
+				
+				
+				
 
 			</li>
 
@@ -171,8 +184,8 @@
 							<label for="name" class="col-sm-2 col-form-label">Role: </label>
 							<div class="col-sm-6">
 								<select name="select" th:field="*{rol}" class="custom-select custom-select-sm">
-									<option value="ROLE_USER" selected>Usuario</option>
 									<option value="ROLE_ADMIN">Administrador</option>
+									<option value="ROLE_SOPORTE" selected>Soporte</option>
 									<option value="ROLE_EMPRENDEDOR">Emprendedor</option>
 									<option value="ROLE_MERCADOLOGO">Mercadologo</option>
 								</select>

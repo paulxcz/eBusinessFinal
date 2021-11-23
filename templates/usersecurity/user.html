@@ -10,7 +10,7 @@
 <meta name="description" content="">
 <meta name="author" content="">
 
-<title>2021-02</title>
+<title>e-Business - Crear Usuario</title>
 
 <!-- Custom fonts for this template-->
 <link href="/vendor/fontawesome-free/css/all.min.css" rel="stylesheet"
@@ -32,17 +32,17 @@
 
 	<!-- Sidebar -->
 		<ul
-			class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion"
+			class="navbar-nav bg-info sidebar sidebar-dark accordion"
 			id="accordionSidebar">
 
 			<!-- Sidebar - Brand -->
 			<a
 				class="sidebar-brand d-flex align-items-center justify-content-center"
-				th:href="@{/categories/index}">
+				th:href="@{/contratos/list}">
 				<div class="sidebar-brand-icon rotate-n-15">
-					<i class="fas fa-leaf"></i>
+					<i class=""></i>
 				</div>
-				<div class="sidebar-brand-text mx-3">App</div>
+				<div class="sidebar-brand-text mx-3">e-Business</div>
 			</a>
 
 			<!-- Divider -->
@@ -167,7 +167,7 @@
 						<div class="form-group row">
 							<label for="name" class="col-sm-2 col-form-label">ID: </label>
 							<div class="col-sm-6">
-								<input type="text" th:field="*{id}" class="form-control"
+								<input type="text" th:field="*{id}" class="form-control" readonly="true"
 									th:errorclass="'form-control alert-danger'" /> <small
 									class="form-text text-danger"
 									th:if="${#fields.hasErrors('id')}" th:errors="*{id}"></small>
