@@ -17,7 +17,7 @@ public class ContratoServiceImpl implements IContratoService{
 	
 	@Override
 	public Integer insert(Contrato contrato) {
-		int rpta = cR.buscarContrato(contrato.getIdContrato());
+		int rpta = cR.buscarContrato(contrato.getCulminacion());
 		if (rpta == 0) {
 			cR.save(contrato);
 		}
@@ -28,11 +28,6 @@ public class ContratoServiceImpl implements IContratoService{
 	public List<Contrato> list() {
 		// TODO Auto-generated method stub
 		return cR.findAll();
-	}
-	
-	@Override
-	public List<String[]> mercadologosConMasProyectos(){
-		return cR.mercadologosConMasProyectos();
 	}
 
 }

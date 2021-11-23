@@ -17,10 +17,4 @@ public interface IProyectoRepository extends JpaRepository<Proyecto, Integer>{
 	
 	@Query( value="select empr.nombre_emprendedor, count(id_proyecto) from Proyectos pro JOIN Emprendedor empr on pro.id_emprendedor=empr.id_emprendedor where pro.id_emprendedor = empr.id_emprendedor GROUP BY empr.nombre_emprendedor", nativeQuery = true )
 	public List<String[]> proyectosXempre();
-	
-	@Query("SELECT count(p.pago) from Proyecto p where p.pago>=:valor")
-	public List<String[]> reporteMayorPago(@Param("valor")double pago);
-	
-	@Query("SELECT count(p.pago) from Proyecto p where p.pago<:valor")
-	public List<String[]> reporteMenorPago(@Param("valor")double pago);
 }

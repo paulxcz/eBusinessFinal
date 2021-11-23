@@ -1,7 +1,5 @@
 package pe.edu.upc.controller;
 
-import java.util.Map;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -13,8 +11,6 @@ import org.springframework.web.bind.support.SessionStatus;
 
 import pe.edu.upc.entities.Contrato;
 import pe.edu.upc.serviceinterface.IContratoService;
-import pe.edu.upc.serviceinterface.IEmprendedorService;
-import pe.edu.upc.serviceinterface.IMercadologoService;
 
 @Controller
 @RequestMapping("/contratos")
@@ -22,15 +18,9 @@ public class ContratoController {
 	
 	@Autowired
 	private IContratoService cService;
-	@Autowired
-	private IEmprendedorService eService;
-	@Autowired
-	private IMercadologoService mService;
 	
 	@GetMapping("/new")
 	public String newContrato(Model model) {
-		model.addAttribute("listaEmprendedores", eService.list());
-		model.addAttribute("listaMercadologos", mService.list());
 		model.addAttribute("contrato", new Contrato());
 		return "contrato/contrato";		
 	}	
@@ -50,8 +40,6 @@ public class ContratoController {
 	@RequestMapping("/save")
 	public String saveContrato(@Validated Contrato contrato, BindingResult result, Model model, SessionStatus status) throws Exception{
 		if(result.hasErrors()){
-			model.addAttribute("listaEmprendedores", eService.list());
-			model.addAttribute("listaMercadologos", mService.list());
 			return "contrato/contrato";
 		}else {
 			int rpta = cService.insert(contrato);
@@ -65,12 +53,6 @@ public class ContratoController {
 			model.addAttribute("contrato", new Contrato());
 			return "redirect:/contratos/list";
 		}
-	}
-	
-	@RequestMapping("/reporte6")
-	public String mercadologosConMasProyectos(Map<String, Object> model) {
-		model.put("listMercadologosConMasProyecto", cService.mercadologosConMasProyectos());
-		return "reports/mercadologosConMasProyectos";
 	}
 	
 }
